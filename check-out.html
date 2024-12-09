@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
@@ -34,7 +35,7 @@
                 <div class="header-right">
                     <a href="./shopping-cart.html">
                         <img src="img/icons/bag.png" alt="">
-                        <span>2</span>
+                        <span class="header-cart-counter">0</span>
                     </a>
                 </div>
 
@@ -77,10 +78,10 @@
                                 <p class="in-name">Name*</p>
                             </div>
                             <div class="col-lg-5">
-                                <input type="text" placeholder="First Name">
+                                <input type="text" name="firstname" placeholder="First Name">
                             </div>
                             <div class="col-lg-5">
-                                <input type="text" placeholder="Last Name">
+                                <input type="text" name="lastname" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="row">
@@ -88,7 +89,7 @@
                                 <p class="in-name">Street Address*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text"  name="address" placeholder="Address">
                             </div>
                         </div>
                         <div class="row">
@@ -96,7 +97,7 @@
                                 <p class="in-name">City*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="city" placeholder="City">
                             </div>
                         </div>
                         <div class="row">
@@ -104,7 +105,7 @@
                                 <p class="in-name">Country</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="country" placeholder="Country">
                             </div>
                         </div>
                         <div class="row">
@@ -112,7 +113,7 @@
                                 <p class="in-name">Post Code/ZIP*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="zipcode"  placeholder="Code/ZIP">
                             </div>
                         </div>
                         <div class="row">
@@ -120,34 +121,13 @@
                                 <p class="in-name">Phone*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="phone"  placeholder="Phone">
+                                <input type="hidden" name="total">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="order-table">
-                            <div class="cart-item">
-                                <span>Product</span>
-                                <p class="product-name">Blue Dotted Shirt</p>
-                            </div>
-                            <div class="cart-item">
-                                <span>Price</span>
-                                <p>$29</p>
-                            </div>
-                            <div class="cart-item">
-                                <span>Quantity</span>
-                                <p>1</p>
-                            </div>
-                            <div class="cart-item">
-                                <span>Shipping</span>
-                                <p>$10</p>
-                            </div>
-
-                            <div class="cart-total">
-                                <span>Total</span>
-                                <p>$39</p>
-                            </div>
-                        </div>
+                    <div class="col-lg-3 order-table-section">
+                     
                     </div>
                 </div>
                 <div class="row">
@@ -157,10 +137,6 @@
                             <ul>
                                 <li>Paypal <img src="img/paypal.jpg" alt=""></li>
                                 <li>Credit / Debit card <img src="img/mastercard.jpg" alt=""></li>
-                                <li>
-                                    <label for="two">Pay when you get the package</label>
-                                    <input type="radio" id="two">
-                                </li>
                             </ul>
                             <button type="submit">Place your order</button>
                         </div>
@@ -193,6 +169,7 @@
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 </body>
