@@ -78,10 +78,10 @@
                                 <p class="in-name">Name*</p>
                             </div>
                             <div class="col-lg-5">
-                                <input type="text" name="firstname" placeholder="First Name">
+                                <input type="text" name="firstname" placeholder="First Name" >
                             </div>
                             <div class="col-lg-5">
-                                <input type="text" name="lastname" placeholder="Last Name">
+                                <input type="text" name="lastname" placeholder="Last Name" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -89,7 +89,7 @@
                                 <p class="in-name">Street Address*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text"  name="address" placeholder="Address">
+                                <input type="text"  name="address" placeholder="Address" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -97,7 +97,7 @@
                                 <p class="in-name">City*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text" name="city" placeholder="City">
+                                <input type="text" name="city" placeholder="City" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -105,7 +105,7 @@
                                 <p class="in-name">Country</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text" name="country" placeholder="Country">
+                                <input type="text" name="country" placeholder="Country" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -113,7 +113,7 @@
                                 <p class="in-name">Post Code/ZIP*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text" name="zipcode"  placeholder="Code/ZIP">
+                                <input type="text" name="zipcode"  placeholder="Code/ZIP" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -121,7 +121,7 @@
                                 <p class="in-name">Phone*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text" name="phone"  placeholder="Phone">
+                                <input type="text" name="phone"  placeholder="Phone" required="">
                                 <input type="hidden" name="total">
                             </div>
                         </div>
@@ -136,57 +136,45 @@
       
                 <div class="my-3">
                   <div class="form-check">
-                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                    <input id="credit" type="radio" class="form-check-input" checked="" >
                     <label class="form-check-label" for="credit">Credit card</label>
                   </div>
                   <div class="form-check">
-                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                    <input id="debit" type="radio" class="form-check-input" >
                     <label class="form-check-label" for="debit">Debit card</label>
                   </div>
                   <div class="form-check">
-                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                    <input id="paypal" type="radio" class="form-check-input" >
                     <label class="form-check-label" for="paypal">PayPal</label>
                   </div>
                 </div>
       
                 <div class="row gy-3">
                   <div class="col-md-6">
-                    <label for="cc-name" class="form-label">Name on card</label>
+                    <label for="cc-name" class="form-label">Nom complet</label>
                     <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                    <small class="text-muted">Full name as displayed on card</small>
-                    <div class="invalid-feedback">
-                      Name on card is required
-                    </div>
+                    <small class="text-muted">Nom complet</small>
                   </div>
       
                   <div class="col-md-6">
-                    <label for="cc-number" class="form-label">Credit card number</label>
+                    <label for="cc-number" class="form-label"> Le numéro de carte</label>
                     <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Credit card number is required
-                    </div>
                   </div>
       
                   <div class="col-md-3">
                     <label for="cc-expiration" class="form-label">Expiration</label>
                     <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Expiration date required
-                    </div>
                   </div>
       
                   <div class="col-md-3">
                     <label for="cc-cvv" class="form-label">CVV</label>
                     <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Security code required
-                    </div>
                   </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="payment-method">
-                            <button type="submit">Place your order</button>
+                            <button type="submit">Passez votre commande</button>
                         </div>
                     </div>
                 </div>
@@ -220,6 +208,13 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+
+        if(!sessionStorage.getItem("cart")){
+            window.location.href = "./shop.html";
+        }
+
+    </script>
 </body>
 
 </html>

@@ -362,4 +362,27 @@
     }
    }
 
+   $('.checkout-form').on('submit', function(e){
+        e.preventDefault();
+        const formData = $(this).serializeArray();
+        const data = {};
+        formData.forEach((item) => {
+            data[item.name] = item.value;
+        });
+        data["total"] = sessionStorage.getItem("cart") ? JSON.parse(sessionStorage.getItem("cart")).reduce((acc, product) => acc + parseFloat(product.price), 0).toFixed(2) : 1;
+        $.ajax({
+            url: "http://127.0.0.1:3001/api/orders/",
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(data){
+                sessionStorage.clear();
+                window.location.href = "./thankyou.html";
+            },
+            error: function(err){
+               alert(err.responseJSON.error || "An error occured, please try again");
+            }
+        });
+    });
+
 })(jQuery);
