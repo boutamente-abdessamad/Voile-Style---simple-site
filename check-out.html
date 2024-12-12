@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
@@ -34,13 +35,13 @@
                 <div class="header-right">
                     <a href="./shopping-cart.html">
                         <img src="img/icons/bag.png" alt="">
-                        <span>2</span>
+                        <span class="header-cart-counter">0</span>
                     </a>
                 </div>
 
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a class="active" href="./index.html">Home</a></li>
+                        <li><a href="./index.html">Home</a></li>
                         <li><a href="./shop.html">Shop</a></li>
                         <li><a href="./contact.html">contact</a></li>
                     </ul>
@@ -77,10 +78,10 @@
                                 <p class="in-name">Name*</p>
                             </div>
                             <div class="col-lg-5">
-                                <input type="text" placeholder="First Name">
+                                <input type="text" name="firstname" placeholder="First Name" >
                             </div>
                             <div class="col-lg-5">
-                                <input type="text" placeholder="Last Name">
+                                <input type="text" name="lastname" placeholder="Last Name" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -88,7 +89,7 @@
                                 <p class="in-name">Street Address*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text"  name="address" placeholder="Address" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -96,7 +97,7 @@
                                 <p class="in-name">City*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="city" placeholder="City" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -104,7 +105,7 @@
                                 <p class="in-name">Country</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="country" placeholder="Country" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -112,7 +113,7 @@
                                 <p class="in-name">Post Code/ZIP*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="zipcode"  placeholder="Code/ZIP" required="">
                             </div>
                         </div>
                         <div class="row">
@@ -120,49 +121,60 @@
                                 <p class="in-name">Phone*</p>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text">
+                                <input type="text" name="phone"  placeholder="Phone" required="">
+                                <input type="hidden" name="total">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="order-table">
-                            <div class="cart-item">
-                                <span>Product</span>
-                                <p class="product-name">Blue Dotted Shirt</p>
-                            </div>
-                            <div class="cart-item">
-                                <span>Price</span>
-                                <p>$29</p>
-                            </div>
-                            <div class="cart-item">
-                                <span>Quantity</span>
-                                <p>1</p>
-                            </div>
-                            <div class="cart-item">
-                                <span>Shipping</span>
-                                <p>$10</p>
-                            </div>
+                    <div class="col-lg-3 order-table-section">
+                     
+                    </div>
+                </div>
+                <hr class="my-4">
 
-                            <div class="cart-total">
-                                <span>Total</span>
-                                <p>$39</p>
-                            </div>
-                        </div>
-                    </div>
+                <h4 class="mb-3">Payment</h4>
+      
+                <div class="my-3">
+                  <div class="form-check">
+                    <input id="credit" type="radio" class="form-check-input" checked="" >
+                    <label class="form-check-label" for="credit">Credit card</label>
+                  </div>
+                  <div class="form-check">
+                    <input id="debit" type="radio" class="form-check-input" >
+                    <label class="form-check-label" for="debit">Debit card</label>
+                  </div>
+                  <div class="form-check">
+                    <input id="paypal" type="radio" class="form-check-input" >
+                    <label class="form-check-label" for="paypal">PayPal</label>
+                  </div>
+                </div>
+      
+                <div class="row gy-3">
+                  <div class="col-md-6">
+                    <label for="cc-name" class="form-label">Nom complet</label>
+                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                    <small class="text-muted">Nom complet</small>
+                  </div>
+      
+                  <div class="col-md-6">
+                    <label for="cc-number" class="form-label"> Le numéro de carte</label>
+                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                  </div>
+      
+                  <div class="col-md-3">
+                    <label for="cc-expiration" class="form-label">Expiration</label>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                  </div>
+      
+                  <div class="col-md-3">
+                    <label for="cc-cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                  </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="payment-method">
-                            <h3>Payment</h3>
-                            <ul>
-                                <li>Paypal <img src="img/paypal.jpg" alt=""></li>
-                                <li>Credit / Debit card <img src="img/mastercard.jpg" alt=""></li>
-                                <li>
-                                    <label for="two">Pay when you get the package</label>
-                                    <input type="radio" id="two">
-                                </li>
-                            </ul>
-                            <button type="submit">Place your order</button>
+                            <button type="submit">Passez votre commande</button>
                         </div>
                     </div>
                 </div>
@@ -193,8 +205,16 @@
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+
+        if(!sessionStorage.getItem("cart")){
+            window.location.href = "./shop.html";
+        }
+
+    </script>
 </body>
 
 </html>
